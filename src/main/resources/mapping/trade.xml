@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.civism.dao.sqlserver.TradeDao">
+
+    <resultMap id="BaseResultMap" type="com.civism.model.TradeDo">
+        <result column="tid" property="tid" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="loadAll" resultMap="BaseResultMap">
+        select top 10 tid   from tradeCenter..tb_tid
+    </select>
+
+
+</mapper>

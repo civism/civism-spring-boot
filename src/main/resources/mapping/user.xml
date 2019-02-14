@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.civism.dao.mysql.UserDao">
+
+    <resultMap id="BaseResultMap" type="com.civism.model.UserDo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="load" resultMap="BaseResultMap">
+        select id,user_name,password from sso_user where id=#{id}
+    </select>
+
+
+</mapper>
